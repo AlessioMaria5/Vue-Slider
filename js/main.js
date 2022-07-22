@@ -3,7 +3,7 @@ const vueApp = new Vue({
     el: '#vueApp',
 
     data: {
-
+        index: 0,
         images: [
             {
                 url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -33,6 +33,7 @@ const vueApp = new Vue({
                 description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
             },
         ],
+        
     }
 })
 
