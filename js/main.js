@@ -38,11 +38,35 @@ const vueApp = new Vue({
 
     methods: {
 
+        activeSliderPrev(){
+
+            if(this.index <1) {
+                
+                this.index = this.images.length -1
+               }
+               else {
+    
+                this.index--
+               }
+        },
+
+        activeSliderNext(){
+
+            if(this.index >3) {
+
+                this.index = 0
+               }
+               else {
+    
+                this.index++
+               }
+        },
+        }
+
         
-    }
+    
 })
 
-console.log(vueApp);
 
 
 // const images = [

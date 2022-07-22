@@ -33,12 +33,11 @@
                     <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
                         <div class="my-carousel-images">
                             
-                            <div v-for = 'slider in images' class="my-carousel-item active">
-                                <img class="img-fluid" :src="images[index].url" alt="slider.name">
+                            <div class="my-carousel-item active">
+                                <img class="img-fluid" :src="images[index].url" alt="images[index].title">
                                 <div class="item-description px-3">
-                                    <h2>{{slider.title}}</h2>
-                                    <h3>{{index++}}</h3>
-                                    <p>{{slider.description}}</p>
+                                    <h2>{{images[index].title}}</h2>
+                                    <p>{{images[index].description}}</p>
                                 </div>
                             </div>
 
@@ -51,12 +50,12 @@
                             </div>
 
                             <!-- prev -->
-                            <div class="my-previous position-absolute">
+                            <div @click = 'activeSliderPrev' class="my-previous position-absolute">
                                 <span class="my-prev-hook"></span>
                             </div>
                             <!-- immagini interne -->
                             <!-- next -->
-                            <div class="my-next position-absolute">
+                            <div @click ='activeSliderNext' class="my-next position-absolute">
                                 <span class="my-next-hook"></span>
                             </div>
                         </div>
