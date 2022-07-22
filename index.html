@@ -45,8 +45,8 @@
                         </div>
                         <div class="my-thumbnails position-relative">
 
-                            <div v-for="image in images" class="my-thumbnail active">
-                                <img class="img-fluid" src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="Thumbnail of Svezia picture">
+                            <div v-for="image in images"  class="my-thumbnail active">
+                                <img class="img-fluid" :src="image.url" alt="Thumbnail of Svezia picture">
                             </div>
 
                             <!-- prev -->
