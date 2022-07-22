@@ -34,9 +34,10 @@
                         <div class="my-carousel-images">
                             
                             <div v-for = 'slider in images' class="my-carousel-item active">
-                                <img class="img-fluid" :src="slider.url" alt="slider.name">
+                                <img class="img-fluid" :src="images[index].url" alt="slider.name">
                                 <div class="item-description px-3">
                                     <h2>{{slider.title}}</h2>
+                                    <h3>{{index++}}</h3>
                                     <p>{{slider.description}}</p>
                                 </div>
                             </div>

@@ -67,7 +67,7 @@ div.my-carousel-item.active{
 
 div.my-carousel-item.hidden {
 
-    background-color: red;
+    display: hidden;
 }
 
 div.my-carousel-item{

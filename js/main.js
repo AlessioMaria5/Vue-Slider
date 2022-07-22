@@ -34,8 +34,15 @@ const vueApp = new Vue({
             },
         ],
         
+    },
+
+    methods: {
+
+        
     }
 })
+
+console.log(vueApp);
 
 
 // const images = [
