@@ -65,6 +65,11 @@ div.my-carousel-item.active{
     display: block;
 }
 
+div.my-carousel-item.hidden {
+
+    background-color: red;
+}
+
 div.my-carousel-item{
     height: 100%;
     position: relative;
@@ -108,5 +113,6 @@ div#my-carousel .my-thumbnails .my-thumbnail.active{
     filter:brightness(1);
     border: 3px rgb(197, 197, 197) solid;
 }
+
 
 
