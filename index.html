@@ -34,7 +34,7 @@
                         <div class="my-carousel-images">
                             
                             <div class="my-carousel-item active">
-                                <img class="img-fluid" :src="images[index].url" alt="images[index].title">
+                                <img class="img-fluid" :src="images[index].url" :alt="images[index].title">
                                 <div class="item-description px-3">
                                     <h2>{{images[index].title}}</h2>
                                     <p>{{images[index].description}}</p>
@@ -45,8 +45,8 @@
                         </div>
                         <div class="my-thumbnails position-relative">
 
-                            <div v-for="image in images"  class="my-thumbnail active">
-                                <img class="img-fluid" :src="image.url" alt="Thumbnail of Svezia picture">
+                            <div v-for="(image, sliderAttiva) in images" :id="sliderAttiva" :class =" (index == sliderAttiva) ? `active` :'not-active' " class="my-thumbnail" >
+                                <img @click="clicked" class="img-fluid" :src="image.url" alt="Thumbnail of Svezia picture">
                             </div>
 
                             <!-- prev -->

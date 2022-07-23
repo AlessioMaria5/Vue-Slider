@@ -67,7 +67,7 @@ div.my-carousel-item.active{
 
 div.my-carousel-item.hidden {
 
-    display: hidden;
+    display: none;
 }
 
 div.my-carousel-item{
