@@ -46,16 +46,16 @@
                         <div class="my-thumbnails position-relative">
 
                             <div v-for="(image, indiceThumbn) in images"  :class =" (index == indiceThumbn) ? `active` :'not-active' " class="my-thumbnail" >
-                                <img @click="clicked(indiceThumbn)" class="img-fluid" :src="image.url" alt="Thumbnail of Svezia picture">
+                                <img @click="clicked(indiceThumbn)"  class="img-fluid" :src="image.url" alt="Thumbnail of Svezia picture">
                             </div>
 
                             <!-- prev -->
-                            <div @click = 'activeSliderPrev' class="my-previous position-absolute">
+                            <div @click = 'activeSliderPrev'@keyup.enter='KeybEvent' class="my-previous position-absolute">
                                 <span class="my-prev-hook"></span>
                             </div>
                             <!-- immagini interne -->
                             <!-- next -->
-                            <div @click ='activeSliderNext' class="my-next position-absolute">
+                            <div @click ='activeSliderNext'@keyup.right='KeybEvent' class="my-next position-absolute">
                                 <span class="my-next-hook"></span>
                             </div>
                         </div>

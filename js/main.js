@@ -2,12 +2,14 @@ const vueApp = new Vue({
 
     el: '#vueApp',
     created:  function(){
-        setInterval(this.activeSliderNext,3000)
+       let ciao = setInterval(this.activeSliderNext,3000)
+       console.log(ciao)
     },
 
     data: {
         index: 0,
         mouseAttivo: true,
+        intervalBe: false,
         images: [
             {
                 url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -57,10 +59,29 @@ const vueApp = new Vue({
 
         MouseDentro(){
             this.mouseAttivo = false;
+            clearInterval(3)
         },
 
         MouseFuori(){
             this.mouseAttivo = true;
+
+            // METODO TROVATO SU -> https://stackoverflow.com/questions/8635502/how-do-i-clear-all-intervals
+            const interval_id = window.setInterval(function(){}, Number.MAX_SAFE_INTEGER);
+            for (let i = 1; i < interval_id; i++) {
+                window.clearInterval(i);
+              }
+              // METODO PER CANCELLARE TUTTI I setInterval assegnando una variabile a window.setInterval, 
+              //richiamandola poi in uno ciclo che va avanti fino a che non è minore di tutti gli id possibili creati
+              
+                setInterval(this.activeSliderNext,3000)
+           
+            
+            
         },
-        }   
+        },   
+
+        KeybEvent(){
+
+            alert('ciao');
+        }
     })
