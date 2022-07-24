@@ -64,6 +64,17 @@ const vueApp = new Vue({
         clicked(indiceFor){
            
                 this.index = indiceFor
-            }
+            },
+
+        MouseDentro(){
+            console.log('ciao');
+
+        },
+
+        MouseFuori(){
+            console.log('fuori');
+        },
         }
+
+        
     })
