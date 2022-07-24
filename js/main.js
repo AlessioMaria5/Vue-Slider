@@ -43,44 +43,23 @@ const vueApp = new Vue({
     methods: {
 
         activeSliderPrev(){
-
-            if(this.index <1) {             
-                this.index = this.images.length -1
-               }
-               else {
-                this.index--
-               }
+            this.index<1?this.index = this.images.length-1:this.index--;
         },
 
         activeSliderNext(){
-
-           if(this.mouseAttivo == true) {
-
-                this.index++
-
-                if(this.index >4) {
-                    this.index = 0      
-                }
-                
-           }
+            this.mouseAttivo==true?this.index++:this.index>4?this.index=0:'';
         },
         
-        clicked(indiceFor){
-           
-                this.index = indiceFor
+        clicked(indiceFor){           
+            this.index = indiceFor;
             },
 
         MouseDentro(){
-            this.mouseAttivo = false
-            console.log(this.mouseAttivo)
-
+            this.mouseAttivo = false;
         },
 
         MouseFuori(){
-            this.mouseAttivo = true
-            console.log(this.mouseAttivo)
+            this.mouseAttivo = true;
         },
-        }
-
-        
+        }   
     })
