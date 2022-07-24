@@ -56,28 +56,23 @@ const vueApp = new Vue({
             if(this.index >3) {
 
                 this.index = 0
-                setInterval(this.index++,3000);
+                
                }
                else {
 
                 this.index++
-                setInterval(this.index++,3000);
+                
                }
         },
         
-        clicked(){
-            for(i = 0 ; i<=4 ; i++ ){
-                let ciao =  document.getElementById(i);
-                    if(i==0){
-                        ciao == document.getElementById(0);
-                        ciao.innerHTL = 'ciao';
-                    }
+        clicked(indiceFor){
+           
+                this.index = indiceFor
             }
 
         }
     
-    }
-})
+    })
 
 
 
