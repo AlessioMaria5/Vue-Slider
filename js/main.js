@@ -1,27 +1,6 @@
 const vueApp = new Vue({
 
     el: '#vueApp',
-    created:  function(){
-       setInterval(this.activeSliderNext,3000)
-       index = 0,
-        ciao1= window.addEventListener('keyup', function(event){
-       
-        console.log(event.key)
-
-        if(event.key == "ArrowLeft"){
-            this.activeSliderPrev();
-            console.log(this.index)
-        } 
-
-        else if (event.key == "ArrowRight"){
-            
-            this.activeSliderNext();
-
-            console.log(this.index) 
-        }
-       })
-    },
-
     data: {
         index: 0,
         mouseAttivo: true,
@@ -59,18 +38,17 @@ const vueApp = new Vue({
 
     methods: {
 
-        activeSliderPrev(abc){
+        activeSliderPrev(){
             this.index<1?this.index = this.images.length-1:this.index--;
         },
 
-        activeSliderNext(abc){
+        activeSliderNext(){
             this.mouseAttivo==true?this.index++:'';
             this.index>4?this.index=0:''
         },
         
         clicked(indiceFor){           
             this.index = indiceFor;
-            console.log(this.index)
             },
 
         MouseDentro(){
@@ -80,5 +58,23 @@ const vueApp = new Vue({
         MouseFuori(){
             this.mouseAttivo = true;   
         },
-        },   
+        },
+
+        created:  function(){
+            setInterval(this.activeSliderNext,3000)
+             index = 0,
+             window.addEventListener('keyup', function(event){ 
+             console.log(event.key)
+     
+             if(event.key == "ArrowLeft"){
+                 this.activeSliderPrev
+                 console.log(this.index)
+             } 
+     
+             else if (event.key == "ArrowRight"){
+                 this.activeSliderNext;
+                 console.log(this.index) 
+             }
+            })
+         },  
     })
