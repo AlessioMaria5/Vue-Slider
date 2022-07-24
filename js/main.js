@@ -54,14 +54,14 @@ const vueApp = new Vue({
 
         activeSliderNext(){
 
-           if(this.mouseAttivo = true) {
+           if(this.mouseAttivo == true) {
 
                 this.index++
 
                 if(this.index >4) {
                     this.index = 0      
                 }
-
+                
            }
         },
         
