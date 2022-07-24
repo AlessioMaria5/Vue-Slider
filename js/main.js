@@ -2,14 +2,29 @@ const vueApp = new Vue({
 
     el: '#vueApp',
     created:  function(){
-       let ciao = setInterval(this.activeSliderNext,3000)
-       console.log(ciao)
+       setInterval(this.activeSliderNext,3000)
+       index = 0,
+        ciao1= window.addEventListener('keyup', function(event){
+       
+        console.log(event.key)
+
+        if(event.key == "ArrowLeft"){
+            this.activeSliderPrev();
+            console.log(this.index)
+        } 
+
+        else if (event.key == "ArrowRight"){
+            
+            this.activeSliderNext();
+
+            console.log(this.index) 
+        }
+       })
     },
 
     data: {
         index: 0,
         mouseAttivo: true,
-        intervalBe: false,
         images: [
             {
                 url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -44,44 +59,26 @@ const vueApp = new Vue({
 
     methods: {
 
-        activeSliderPrev(){
+        activeSliderPrev(abc){
             this.index<1?this.index = this.images.length-1:this.index--;
         },
 
-        activeSliderNext(){
+        activeSliderNext(abc){
             this.mouseAttivo==true?this.index++:'';
             this.index>4?this.index=0:''
         },
         
         clicked(indiceFor){           
             this.index = indiceFor;
+            console.log(this.index)
             },
 
         MouseDentro(){
             this.mouseAttivo = false;
-            clearInterval(3)
         },
 
         MouseFuori(){
-            this.mouseAttivo = true;
-
-            // METODO TROVATO SU -> https://stackoverflow.com/questions/8635502/how-do-i-clear-all-intervals
-            const interval_id = window.setInterval(function(){}, Number.MAX_SAFE_INTEGER);
-            for (let i = 1; i < interval_id; i++) {
-                window.clearInterval(i);
-              }
-              // METODO PER CANCELLARE TUTTI I setInterval assegnando una variabile a window.setInterval, 
-              //richiamandola poi in uno ciclo che va avanti fino a che non è minore di tutti gli id possibili creati
-              
-                setInterval(this.activeSliderNext,3000)
-           
-            
-            
+            this.mouseAttivo = true;   
         },
         },   
-
-        KeybEvent(){
-
-            alert('ciao');
-        }
     })
