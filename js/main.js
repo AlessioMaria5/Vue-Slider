@@ -47,7 +47,8 @@ const vueApp = new Vue({
         },
 
         activeSliderNext(){
-            this.mouseAttivo==true?this.index++:this.index>4?this.index=0:'';
+            this.mouseAttivo==true?this.index++:'';
+            this.index>4?this.index=0:''
         },
         
         clicked(indiceFor){           
