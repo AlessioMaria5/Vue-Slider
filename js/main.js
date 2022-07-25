@@ -67,14 +67,18 @@ const vueApp = new Vue({
              console.log(event.key)
      
              if(event.key == "ArrowLeft"){
-                 this.activeSliderPrev
+                 this.index--
                  console.log(this.index)
              } 
      
              else if (event.key == "ArrowRight"){
-                 this.activeSliderNext;
+                 this.index++
                  console.log(this.index) 
              }
             })
          },  
     })
+
+function newFunction() {
+    this.activeSliderPrev;
+}
